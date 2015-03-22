@@ -52,12 +52,3 @@
 (require 'init-loader)
 (init-loader-load "~/.emacs.d/inits")
 (setq init-loader-show-log-after-init t)
-
-;; Do not use C-x, C-c, C-v as cut, copy, and paste
-(setq cua-enable-cua-keys  nil)
-
-;; Org-mode shortcut keys.
-(add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cb" 'org-iswitchb)
