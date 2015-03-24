@@ -3,13 +3,22 @@
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
+;(setq org-default-notes-file (concat org-directory "/note.org"))
+(setq org-default-notes-file
+      (expand-file-name "~/nushiolab/org/note.org"))
+
+(setq org-deadline-warning-days 7)
+
+(define-key global-map "\C-cc" 'org-capture)
+(global-set-key (kbd "<home>") (lambda() (interactive)(find-file "~/nushiolab/org/note.org")))
+(global-set-key (kbd "<end>") (lambda() (interactive)(find-file "~/nushiolab/org/project.org")))
 
 
 ;; capture templates
 (setq org-capture-templates
       '(("p" "Project Task" entry (file+headline (expand-file-name "~/nushiolab/org/project.org") "Inbox")
              "** TODO %?\n    %i\n    %a\n    %T")
-        ("m" "memo" entry (file (expand-file-name "~/nushiolab/org/note.org"))
+        ("n" "note" entry (file (expand-file-name "~/nushiolab/org/note.org"))
              "* %?\n    %i\n    %a\n    %T")))
 
 ;; agenda
