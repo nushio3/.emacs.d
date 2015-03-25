@@ -17,9 +17,12 @@
 ;; capture templates
 (setq org-capture-templates
       '(("p" "Project Task" entry (file+headline (expand-file-name "~/nushiolab/org/project.org") "Inbox")
-             "** TODO %?\n    %i\n    %a\n    %T")
+             "** TODO %?\n    %i\n    %a\n    DEADLINE: %^t")
         ("n" "note" entry (file (expand-file-name "~/nushiolab/org/note.org"))
              "* %?\n    %i\n    %a\n    %T")))
+;; for format, see http://orgmode.org/manual/Template-expansion.html#Template-expansion
+
 
 ;; agenda
 (setq org-agenda-files (list (expand-file-name "~/nushiolab/org/") (expand-file-name "~/nushiolab/org/gcal/")))
+(setq org-columns-default-format "%38ITEM(Details) %TAGS(Context) %7TODO(To Do) %5Effort(Time){:} %6CLOCKSUM{Total}")
