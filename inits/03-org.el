@@ -11,7 +11,7 @@
 
 (define-key global-map "\C-cc" 'org-capture)
 (global-set-key (kbd "<home>") (lambda() (interactive)(find-file "~/nushiolab/org/note.org")))
-(global-set-key (kbd "<end>") (lambda() (interactive)(find-file "~/nushiolab/org/project.org")))
+(global-set-key (kbd "<end>") (lambda() (interactive)(progn (find-file "~/nushiolab/org/project.org") (org-clock-sum) )))
 
 
 ;; capture templates
@@ -25,4 +25,9 @@
 
 ;; agenda
 (setq org-agenda-files (list (expand-file-name "~/nushiolab/org/") (expand-file-name "~/nushiolab/org/gcal/")))
-(setq org-columns-default-format "%38ITEM(Details) %TAGS(Context) %7TODO(To Do) %5Effort(Time){:} %6CLOCKSUM{Total}")
+
+
+;(setq org-columns-default-format "%38ITEM(Details) %TAGS(Context) %7TODO(To Do) %5Effort(Time){:} %6CLOCKSUM{Total}")
+
+(setq org-columns-default-format "%38ITEM(Details) %DEADLINE %TAGS(Context) %7TODO(To Do) %6CLOCKSUM(Time){Total}")
+; c.f. http://orgmode.org/manual/Special-properties.html
