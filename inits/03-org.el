@@ -27,7 +27,13 @@
 (setq org-agenda-files (list (expand-file-name "~/nushiolab/org/") (expand-file-name "~/nushiolab/org/gcal/")))
 
 
-;(setq org-columns-default-format "%38ITEM(Details) %TAGS(Context) %7TODO(To Do) %5Effort(Time){:} %6CLOCKSUM{Total}")
-
-(setq org-columns-default-format "%38ITEM(Details) %DEADLINE %TAGS(Context) %7TODO(To Do) %6CLOCKSUM(Time){Total}")
+; set the columns in agenda-column view. i.e. C-c a a C-c C-x C-c
 ; c.f. http://orgmode.org/manual/Special-properties.html
+(setq org-columns-default-format "%38ITEM(Details) %TAGS(Context) %7TODO(To Do) %5Effort(Time){:} %6CLOCKSUM{Total}")
+;(setq org-columns-default-format "%38ITEM(Details) %TAGS(Context) %7TODO(To Do) %5Effort(Time){:} %6CLOCKSUM{Total}")
+;(setq org-columns-default-format "%38ITEM(Details) %10DEADLINE %TAGS(Context) %7TODO(To Do) %5Effort(Time){:} %6CLOCKSUM{Total}")
+
+; set the time grid settings (toggle with key "G")
+(setq org-agenda-time-grid '((daily today)
+                            "----------------"
+                            (800 1000 1200 1400 1600 1800 2000)))
