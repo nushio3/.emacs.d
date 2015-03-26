@@ -16,7 +16,7 @@
 
 ;; capture templates
 (setq org-capture-templates
-      '(("p" "Project Inbox" entry (file+headline (expand-file-name "~/nushiolab/org/project-inbox.org") "Inbox")
+      '(("p" "Project Inbox" entry (file+headline (expand-file-name "~/nushiolab/org/inbox.org") "Inbox")
                       "** TODO %?\n    %i\n    %a\n    %T")
 ;             "** TODO %?\n    %i\n    %a\n    DEADLINE: %^t")
         ("n" "note" entry (file (expand-file-name "~/nushiolab/org/note.org"))
