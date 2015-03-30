@@ -1,3 +1,4 @@
+(global-set-key "\C-t" 'nil)
 (global-set-key "\C-cd" 'flymake-display-err-menu-for-current-line)
 (global-set-key "\C-p" 'anything)
 (global-set-key [f5] 'quickrun)
