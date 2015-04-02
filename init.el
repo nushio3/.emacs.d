@@ -59,6 +59,12 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(inhibit-startup-screen t)
+ '(org-agenda-sorting-strategy
+   (quote
+    ((agenda habit-down time-up priority-down category-keep)
+     (todo deadline-up)
+     (tags priority-down category-keep)
+     (search category-keep))))
  '(package-selected-packages
    (quote
     (review-mode idris-mode magit flycheck flymake-cursor markdown-mode ghc shm haskell-mode quickrun powerline auto-complete anything))))

@@ -38,3 +38,7 @@
 (setq org-agenda-time-grid '((daily today)
                             "----------------"
                             (800 1000 1200 1400 1600 1800 2000)))
+
+; Save the clock history across emacs session
+(setq org-clock-persist 'history)
+(org-clock-persistence-insinuate)
