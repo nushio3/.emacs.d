@@ -14,6 +14,6 @@
 (setq completion-ignore-case t)
 (global-auto-revert-mode t)
 
-(global-hl-line-mode)
+;(global-hl-line-mode)
 
 (cua-mode +1)
