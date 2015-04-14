@@ -67,7 +67,7 @@
      (search category-keep))))
  '(package-selected-packages
    (quote
-    (review-mode idris-mode magit flycheck flymake-cursor markdown-mode ghc shm haskell-mode quickrun powerline auto-complete anything))))
+    (mew review-mode idris-mode magit flycheck flymake-cursor markdown-mode ghc shm haskell-mode quickrun powerline auto-complete anything))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
