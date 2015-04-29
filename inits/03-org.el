@@ -48,9 +48,9 @@
 ;; Insert the org mode clock into the temp file
 (display-time)
 (defun esf/org-clocking-info-to-file ()
-  (with-temp-file "~/.emacs.d/org-mode-status.txt"
-    ;; (message (org-clock-get-clock-string))
     (if (org-clock-is-active)
+        (with-temp-file "~/.emacs.d/org-mode-status.txt"
+    ;; (message (org-clock-get-clock-string))
         (insert (format "[%d/%d min] %s"
                         (- (org-clock-get-clocked-time) org-clock-total-time)
                         (org-clock-get-clocked-time)
