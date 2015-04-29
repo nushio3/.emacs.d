@@ -48,15 +48,21 @@
 ;; Insert the org mode clock into the temp file
 (display-time)
 (defun esf/org-clocking-info-to-file ()
-    (if (org-clock-is-active)
-        (with-temp-file "~/.emacs.d/org-mode-status.txt"
-    ;; (message (org-clock-get-clock-string))
+    (if (org-clock-is-active) (progn
+        (with-temp-file "~/.emacs.d/org-mode-status.fifo"
+          ;; can be created by shell command "mkfifo org-mode-status.fifo"
         (insert (format "[%d/%d min] %s"
                         (- (org-clock-get-clocked-time) org-clock-total-time)
                         (org-clock-get-clocked-time)
-                        (org-clock-get-clock-string))
+                        ;;                        (org-clock-get-clock-string)
+                        ;;                        'org-clock-current-task
+                        (eval org-clock-current-task)
+                        )
                 )
-      ) ;;
+        )
+
+        (shell-command "echo '' > ~/.emacs.d/org-mode-status.fifo") ;; flush the pipe
+        );; progn
     )
   )
 (add-hook 'display-time-hook 'esf/org-clocking-info-to-file)
