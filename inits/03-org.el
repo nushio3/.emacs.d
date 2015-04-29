@@ -61,8 +61,14 @@
                 )
         )
 
-        (shell-command "echo '' > ~/.emacs.d/org-mode-status.fifo") ;; flush the pipe
+        (with-temp-buffer (shell-command "echo '' > ~/.emacs.d/org-mode-status.fifo" t )) ;; flush the pipe
         );; progn
     )
+    )
+
+(defun esf/org-clear-clocking-info-file ()
+        (with-temp-buffer (shell-command "echo 'out of clock' > ~/.emacs.d/org-mode-status.fifo" t) ;; flush the pipe
   )
 (add-hook 'display-time-hook 'esf/org-clocking-info-to-file)
+(add-hook 'org-clock-in-hook 'esf/org-clocking-info-to-file)
+(add-hook 'org-clock-out-hook 'esf/org-clear-clocking-info-file)
