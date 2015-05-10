@@ -61,10 +61,11 @@
  '(inhibit-startup-screen t)
  '(org-agenda-sorting-strategy
    (quote
-    ((agenda habit-down time-up priority-down category-keep)
-     (todo deadline-up)
+    ((agenda habit-down timestamp-down priority-down category-keep)
+     (todo deadline-down)
      (tags priority-down category-keep)
      (search category-keep))))
+ '(org-enforce-todo-dependencies t)
  '(package-selected-packages
    (quote
     (mew review-mode idris-mode magit flycheck flymake-cursor markdown-mode ghc shm haskell-mode quickrun powerline auto-complete anything))))
