@@ -10,8 +10,8 @@
 (setq org-deadline-warning-days 7)
 
 (define-key global-map "\C-cc" 'org-capture)
-(global-set-key (kbd "<home>") (lambda() (interactive)(find-file "~/nushiolab/org/note.org")))
-(global-set-key (kbd "<end>") (lambda() (interactive)(progn (find-file "~/nushiolab/org/project.org") (org-clock-sum) )))
+(global-set-key (kbd "<home>") (lambda() (interactive)(find-file "~/Dropbox/org/note.org")))
+(global-set-key (kbd "<end>") (lambda() (interactive)(progn (find-file "~/Dropbox/org/project.org") (org-clock-sum) )))
 
 
 ;; capture templates

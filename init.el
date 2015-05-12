@@ -59,12 +59,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(inhibit-startup-screen t)
- '(org-agenda-sorting-strategy
-   (quote
-    ((agenda habit-down timestamp-down priority-down category-keep)
-     (todo deadline-down)
-     (tags priority-down category-keep)
-     (search category-keep))))
  '(org-enforce-todo-dependencies t)
  '(package-selected-packages
    (quote
@@ -77,3 +71,12 @@
  )
 
 ;; (server-start) ;; start emacs server
+
+
+;;;; '(org-agenda-sorting-strategy
+;;;;   (quote
+;;;;    ((agenda habit-down timestamp-down priority-down category-keep)
+;;;;     (todo deadline-down)
+;;;;     (tags priority-down category-keep)
+;;;;     (search category-keep))))
+;;;;
