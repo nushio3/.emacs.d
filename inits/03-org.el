@@ -25,7 +25,7 @@
 
 
 ;; agenda
-(setq org-agenda-files (list (expand-file-name "~/nushiolab/org/") (expand-file-name "~/nushiolab/org/gcal/")))
+(setq org-agenda-files (list (expand-file-name "~/Dropbox/org/") (expand-file-name "~/Dropbox/org/gcal/")))
 
 
 ; set the columns in agenda-column view. i.e. C-c a a C-c C-x C-c
