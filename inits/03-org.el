@@ -39,6 +39,9 @@
                             "----------------"
                             (800 1000 1200 1400 1600 1800 2000)))
 
+; Only one occurrence is shown for each repeating stamp, either today or the nearest into the future.
+(setq org-agenda-repeating-timestamp-show-all nil)
+
 ; Save the clock history across emacs session
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
