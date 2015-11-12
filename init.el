@@ -58,6 +58,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(haskell-compile-cabal-build-command "cd %s && stack build --ghc-options=-ferror-spans")
  '(inhibit-startup-screen t)
  '(org-enforce-todo-dependencies t)
  '(package-selected-packages
