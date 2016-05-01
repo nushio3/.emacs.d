@@ -63,6 +63,17 @@
                         )
                 )
         )
+        (with-temp-file "~/.emacs.d/org-mode-status.txt"
+          ;; can be created by shell command "mkfifo org-mode-status.fifo"
+        (insert (format "%d(%d)min: %s"
+                        (- (org-clock-get-clocked-time) org-clock-total-time)
+                        (org-clock-get-clocked-time)
+                        ;;                        (org-clock-get-clock-string)
+                        ;;                        'org-clock-current-task
+                        (eval org-clock-current-task)
+                        )
+                )
+        )
         ;;(shell-command "echo '' > ~/.emacs.d/org-mode-status.fifo" )
         (with-temp-buffer (shell-command "echo '' > ~/.emacs.d/org-mode-status.fifo" t )) ;; flush the pipe
         );; progn
@@ -70,8 +81,10 @@
     )
 
 (defun esf/org-clear-clocking-info-file ()
+  (progn
         (with-temp-buffer (shell-command "echo 'out of clock' > ~/.emacs.d/org-mode-status.fifo" t)) ;; flush the pipe
-  )
+        (with-temp-buffer (shell-command "echo 'out of clock' > ~/.emacs.d/org-mode-status.txt" t)) ;; flush the pipe
+  ))
 (add-hook 'display-time-hook 'esf/org-clocking-info-to-file)
 (add-hook 'org-clock-in-hook 'esf/org-clocking-info-to-file)
 (add-hook 'org-clock-out-hook 'esf/org-clear-clocking-info-file)
