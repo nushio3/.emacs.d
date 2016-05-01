@@ -5,7 +5,7 @@
 (global-set-key "\C-cs" 'haskell-mode-stylish-buffer)
 (windmove-default-keybindings 'meta)
 
-(global-set-key (kbd "<M-S-return>") (lambda() (interactive)(shell-command "gnome-terminal --hide-menubar")))
+(global-set-key (kbd "<M-S-return>") (lambda() (interactive)(shell-command "xfce4-terminal")))
 
 
 ;; Do not use C-x, C-c, C-v as cut, copy, and paste
