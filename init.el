@@ -63,7 +63,7 @@
  '(org-enforce-todo-dependencies t)
  '(package-selected-packages
    (quote
-    (multi-web-mode web-mode mew review-mode idris-mode magit flycheck flymake-cursor markdown-mode ghc shm haskell-mode quickrun powerline auto-complete anything))))
+    (rust-mode multi-web-mode web-mode mew review-mode idris-mode magit flycheck flymake-cursor markdown-mode ghc shm haskell-mode quickrun powerline auto-complete anything))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
