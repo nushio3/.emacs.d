@@ -2,7 +2,7 @@
 (global-set-key "\C-z" 'nil)
 
 (global-set-key "\C-cd" 'flymake-display-err-menu-for-current-line)
-(global-set-key "\C-p" 'anything)
+(global-set-key "\M-p" 'anything)
 (global-set-key [f5] 'quickrun)
 (global-set-key "\C-cs" 'haskell-mode-stylish-buffer)
 (windmove-default-keybindings 'meta)
