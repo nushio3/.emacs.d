@@ -89,3 +89,11 @@
 (add-hook 'display-time-hook 'esf/org-clocking-info-to-file)
 (add-hook 'org-clock-in-hook 'esf/org-clocking-info-to-file)
 (add-hook 'org-clock-out-hook 'esf/org-clear-clocking-info-file)
+
+
+;;
+(defun org-renumber-deadlines (&optional beg end)             ; foo2は1引数
+  (interactive "r")
+  (call-process-region beg end "org-renumber-deadlines.py" t t t))
+  ;(insert (number-to-string beg) " " (number-to-string end)))
+;call-process-region start end program &optional delete destination display &rest args
