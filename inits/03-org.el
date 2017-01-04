@@ -10,8 +10,9 @@
 (setq org-deadline-warning-days 7)
 
 (define-key global-map "\C-cc" 'org-capture)
-(global-set-key (kbd "<home>") (lambda() (interactive)(find-file "~/Dropbox/org/note.org")))
-(global-set-key (kbd "<end>") (lambda() (interactive)(progn (find-file "~/Dropbox/org/project.org") (org-clock-sum) )))
+(global-set-key (kbd "<end>") (lambda() (interactive)(find-file "~/Dropbox/org/note.org")))
+(global-set-key (kbd "<insert>") (lambda() (interactive)(find-file "~/Dropbox/org/note.org")))
+(global-set-key (kbd "<home>") (lambda() (interactive)(progn (find-file "~/Dropbox/org/project.org") (org-clock-sum) )))
 
 
 ;; capture templates
@@ -88,3 +89,11 @@
 (add-hook 'display-time-hook 'esf/org-clocking-info-to-file)
 (add-hook 'org-clock-in-hook 'esf/org-clocking-info-to-file)
 (add-hook 'org-clock-out-hook 'esf/org-clear-clocking-info-file)
+
+
+;;
+(defun org-renumber-deadlines (&optional beg end)             ; foo2は1引数
+  (interactive "r")
+  (call-process-region beg end "org-renumber-deadlines.py" t t t))
+  ;(insert (number-to-string beg) " " (number-to-string end)))
+;call-process-region start end program &optional delete destination display &rest args
