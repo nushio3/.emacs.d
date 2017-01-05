@@ -92,8 +92,8 @@
 
 
 ;;
-(defun org-renumber-deadlines (&optional beg end)             ; foo2は1引数
+(defun org-reschedule (&optional beg end)             ; foo2は1引数
   (interactive "r")
-  (call-process-region beg end "org-renumber-deadlines.py" t t t))
+  (call-process-region beg end "org-reschedule.py" t t t))
   ;(insert (number-to-string beg) " " (number-to-string end)))
 ;call-process-region start end program &optional delete destination display &rest args
