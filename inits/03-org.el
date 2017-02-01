@@ -36,9 +36,9 @@
 ;(setq org-columns-default-format "%38ITEM(Details) %10DEADLINE %TAGS(Context) %7TODO(To Do) %5Effort(Time){:} %6CLOCKSUM{Total}")
 
 ; set the time grid settings (toggle with key "G")
-(setq org-agenda-time-grid '((daily today)
-                            "----------------"
-                            (800 1000 1200 1400 1600 1800 2000)))
+;;;; (setq org-agenda-time-grid '((daily today)
+;;;;                             "----------------"
+;;;;                             (800 1000 1200 1400 1600 1800 2000)))
 
 ; Only one occurrence is shown for each repeating stamp, either today or the nearest into the future.
 (setq org-agenda-repeating-timestamp-show-all nil)
@@ -86,9 +86,9 @@
         (with-temp-buffer (shell-command "echo 'out of clock' > ~/.emacs.d/org-mode-status.fifo" t)) ;; flush the pipe
         (with-temp-buffer (shell-command "echo 'out of clock' > ~/.emacs.d/org-mode-status.txt" t)) ;; flush the pipe
   ))
-(add-hook 'display-time-hook 'esf/org-clocking-info-to-file)
-(add-hook 'org-clock-in-hook 'esf/org-clocking-info-to-file)
-(add-hook 'org-clock-out-hook 'esf/org-clear-clocking-info-file)
+;(add-hook 'display-time-hook 'esf/org-clocking-info-to-file)
+;(add-hook 'org-clock-in-hook 'esf/org-clocking-info-to-file)
+;(add-hook 'org-clock-out-hook 'esf/org-clear-clocking-info-file)
 
 
 ;;
