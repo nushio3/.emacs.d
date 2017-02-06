@@ -85,7 +85,11 @@
   (progn
         (with-temp-buffer (shell-command "echo 'out of clock' > ~/.emacs.d/org-mode-status.fifo" t)) ;; flush the pipe
         (with-temp-buffer (shell-command "echo 'out of clock' > ~/.emacs.d/org-mode-status.txt" t)) ;; flush the pipe
-  ))
+        ))
+
+;; ステータス送信が正しく作動するためには、受け取り側のパイプが開いている必要がある。
+;; もしorg-modeでクロックインした時にemacsがフリーズするようなら、.fifoファイルの受け取り側が正しく動作しているか
+;; 確認すること。
 (add-hook 'display-time-hook 'esf/org-clocking-info-to-file)
 (add-hook 'org-clock-in-hook 'esf/org-clocking-info-to-file)
 (add-hook 'org-clock-out-hook 'esf/org-clear-clocking-info-file)
